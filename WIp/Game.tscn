@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Player.png" type="Texture" id=1]
+[ext_resource path="res://asteriod/Asteriod.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Exhaust.png" type="Texture" id=3]
-[ext_resource path="res://asteriod/Asteriod.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Exhaust.png" type="Texture" id=4]
 
 [node name="Game" type="Node2D"]
 __meta__ = {
@@ -11,7 +11,7 @@ __meta__ = {
 }
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 475, 203 )
+position = Vector2( 464, 212 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -20,10 +20,10 @@ __meta__ = {
 [node name="Exhaust" type="Sprite" parent="Player"]
 visible = false
 position = Vector2( 0, 40 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 polygon = PoolVector2Array( 5, -25.2, 5, -22.5, 28.3, 17, 27.2, 19, 25.9, 19, 17.9, 28, 13.6, 28, -0.700001, 21.7, -19, 29, -19, 25.9, -28, 17.9, -28, 14.4, -3, -25.6, -3, -29.2 )
@@ -31,13 +31,13 @@ polygon = PoolVector2Array( 5, -25.2, 5, -22.5, 28.3, 17, 27.2, 19, 25.9, 19, 17
 [node name="Asteriod_container" type="Node2D" parent="Player"]
 position = Vector2( 100, 100 )
 
-[node name="Node2D" parent="Player/Asteriod_container" instance=ExtResource( 4 )]
+[node name="Node2D" parent="Player/Asteriod_container" instance=ExtResource( 1 )]
 position = Vector2( 100, 100 )
 
-[node name="Asteriod2" parent="Player/Asteriod_container" instance=ExtResource( 4 )]
+[node name="Asteriod2" parent="Player/Asteriod_container" instance=ExtResource( 1 )]
 position = Vector2( -400, -250 )
 
-[node name="Node2D2" parent="Player/Asteriod_container" instance=ExtResource( 4 )]
+[node name="Node2D2" parent="Player/Asteriod_container" instance=ExtResource( 1 )]
 position = Vector2( 799.857, 10 )
 
 [node name="Effects" type="Node2D" parent="Player"]
